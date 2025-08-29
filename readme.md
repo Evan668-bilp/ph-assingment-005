@@ -36,7 +36,7 @@ Handles dynamically added elements automatically.
 
 
 5. What is the difference between **preventDefault() and stopPropagation()** methods?
-ans:
+ans::
 preventDefault() → Stops default browser action (like form submit, link navigation).
 
 stopPropagation() → Stops event bubbling to parents. 
