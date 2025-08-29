@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Emergency Service Directory — Bangladesh</title>
+
+  <!-- Tailwind CSS (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- DaisyUI (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+  <link rel="shortcut icon" href="https://em-content.zobj.net/source/microsoft-teams/363/rotating-light_1f6a8.png" />
+  <style>
+    /* ছোটখাটো টাচ-আপ */
+    .soft-card { box-shadow: 0 8px 28px rgba(0,0,0,.06); }
+    .heart-burst { transform: scale(1.25); transition: transform .15s ease; }
+  </style>
+</head>
+<body class="bg-base-200 bg-green-100 min-h-screen">
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar bg-base-100 bg-green-100 border-b sticky top-0 z-50">
+    <div class="container mx-auto px-3">
+      <!-- <div class="navbar-start gap-3">
+        <div class="avatar placeholder">
+          <div class="bg-gradient-to-br from-emerald-500 to-green-700 text-white rounded-xl w-10">
+            <span class="text-xl">🛟</span>
+          </div>
+        </div>
+        <div class="flex flex-col leading-tight">
+          <span class="font-extrabold text-lg">Emergency <br> Service</span>
+          <!-- <span class="text-xs opacity-70">Govt. of the People’s Republic of Bangladesh</span> -->
+       <!---- </div>
+      </div> -->
+
+
+      <nav class="w-full flex items-center justify-between px-6 py-3 bg-white shadow">
+    <!-- Left Logo + Title -->
+    <div class="flex items-center space-x-2">
+      <img src="assets/logo.png" 
+           alt="Logo" class="h-8 w-8">
+      <span class="font-bold text-green-800">Emergency <br> Service</span>
+    </div>
+
+
+      <div class="navbar-end gap-2">
+        <!-- Heart / Favorites -->
+        <div class="badge badge-lg gap-1  text-black font-semibold bg-green-100 px-3 py-1 rounded-full">
+          <!-- <span>💗</span> -->
+          <span id="heartCount">0</span>
+           <!-- <span>💗</span> -->
+            <span class="text-red-600 text-lg">❤</span>
+        </div>
+        <!-- Coins -->
+        <div class="badge badge-lg gap-1 text-black font-semibold bg-green-100 px-3 py-1 rounded-full">
+          <!-- <span>🪙</span> -->
+          <span id="coinCount">100</span>
+           <span>🪙</span>
+        </div>
+        <!-- Copy Count -->
+        <div class="badge badge-lg gap-1 bg-green-600 text-white font-semibold rounded-full">
+          <!-- <span>📋</span> -->
+          <span id="copyCount">0</span>
+          <span class="text-xs opacity-70 ml-0.5">Copy</span>
+        </div>
+      </div>
+    </div>
+  </nav>
+<!-- 
+  <!-- ========== HERO ========== --
+  <header class="bg-gradient-to-r from-emerald-600 via-teal-600 to-green-700 text-base-100">
+    <div class="container mx-auto px-3 py-10 sm:py-14 text-center">
+      <!-- top-center logo --
+      <div class="flex justify-center">
+        <div class="rounded-full bg-white/15 backdrop-blur p-4 ring-2 ring-white/30">
+          <div class="rounded-full bg-white text-emerald-700 w-16 h-16 grid place-items-center text-3xl shadow">
+            🛡️
+          </div>
+        </div>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-extrabold mt-6">Emergency Service Directory</h1>
+      <p class="text-sm sm:text-base opacity-90 mt-2">
+        Government Emergency Services at Your Fingertips
+      </p>
+
+      <!-- slogan bottom-center --
+      <p class="mt-8 text-base sm:text-lg font-medium">
+        “Dial fast, stay safe — জীবন আগে”
+      </p>
+    </div> -->
+
+
+
+
+<!-- ========== HERO ========== -->
+  <header class="bg-gradient-to-r from-emerald-950 via-teal-700 to-green-950 text-base-100">
+    <div class="container mx-auto px-3 py-10 sm:py-14 text-center">
+      <!-- top-center logo -->
+      <div class="flex justify-center">
+        <div class="rounded-full bg-white/15 "> 
+           <div class="rounded-full  w-16 h-16 grid place-items-center text-3xl shadow"><img src="assets/logo-dark.png" alt="logo-dark">
+        
+          </div> 
+        </div>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl font-extrabold mt-6">Emergency Service Directory</h1>
+      <p class="text-sm sm:text-base opacity-90 mt-2">
+        Government Emergency Services at Your Fingertips- A Projact by Government of the People’s republic in bangladesh 
+       
+    </div>
+
+
+
+
+
+  </header>
+
+  <!-- ========== MAIN ========== -->
+  <main class="container mx-auto px-3 py-8">
+    <!-- Layout: Cards (left) + History (right) -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      <!-- ===== Cards & Hotline section (span 2 cols on lg) ===== -->
+      <section class="lg:col-span-2 items-center justify-between">
+        <div class="flex items-center justify-between mb-4">
+          <!-- <h2 class="text-xl sm:text-2xl font-bold">Emergency Hotlines</h2> -->
+          <!-- <span class="badge badge-outline">Minimum 6 cards</span> -->
+        <!-- </div> -->
+
+        <!-- Cards Grid -->
+        <div class="grid sm:grid-cols-2 xl:grid-cols-3 gap-5">
+          <!-- Card Template: copy & tweak -->
+          <!-- 1 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="National Emergency Number" data-number="999" data-category="All">
+            <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+            <!-- <button class="absolute top-4 right-4 text-gray-500 hover:text-red-500"> -->
+      
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+                <!-- <div class="avatar placeholder">
+                  <div class="bg-emerald-100 text-emerald-700 rounded-2xl w-10">🚨</div>
+                </div> -->
+                <div>
+                  <h2 class="card-title text-base font-bold">National Emergency Number</h2>
+                  <p class="text-xs opacity-70 -mt-0.5">Emergency Number</p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3 select-text"><span class="number">999</span></p>
+              <div class="badge badge-ghost">All</div>
+
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">
+                  📋 Copy
+                </button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">
+                  📞 Call
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="Police Helpline Number" data-number="999" data-category="Police">
+
+
+            <!-- <button class="absolute right-2 top-2 text-xl heart-btn">💗</button> -->
+
+
+ <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+
+
+
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+
+
+
+                <!-- <div class="avatar placeholder">
+                  <div class="bg-blue-100 text-blue-700 rounded-full w-10">👮‍♂️</div>
+                </div> -->
+
+
+
+
+                <div>
+                  <h3 class="card-title text-base font-bold">Police Helpline Number</h3>
+                  <p class="text-xs opacity-70 -mt-0.5">Police</p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3"><span class="number">999</span></p>
+              <div class="badge badge-ghost">Police</div>
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">📋 Copy</button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">📞 Call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="Fire Service Number" data-number="999" data-category="Fire">
+
+
+<!-- 
+            <button class="absolute left-2 top-2 text-xl heart-btn">💗</button> -->
+
+
+
+
+            
+ <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+
+
+
+
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+
+                <!-- <div class="avatar placeholder">
+                  <div class="bg-red-100 text-red-700 rounded-full w-10">🔥</div>
+                </div>-->
+
+                <div> 
+
+
+
+                  <h3 class="card-title text-base font-bold">Fire Service Number</h3>
+                  <p class="text-xs opacity-70 -mt-0.5">Fire Service </p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3"><span class="number">999</span></p>
+              <div class="badge badge-ghost">Fire</div>
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">📋 Copy</button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">📞 Call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="Ambulance Service" data-number="1994" data-category="Health">
+
+
+            <!-- <button class="absolute left-2 top-2 text-xl heart-btn">💗</button> -->
+
+
+
+            
+ <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+
+
+
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+
+
+<!--                 
+                <div class="avatar placeholder">
+                  <div class="bg-rose-100 text-rose-700 rounded-full w-10">🚑</div>
+                </div> -->
+
+
+                <div>
+                  <h3 class="card-title text-base font-bold">Ambulance Service</h3>
+                  <p class="text-xs opacity-70 -mt-0.5">Ambulance</p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3"><span class="number">1994</span></p>
+              <div class="badg=e badge-ghost">Health</div>
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">📋 Copy</button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">📞 Call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="Women & Child Helpline" data-number="109" data-category="Help">
+
+
+            <!-- <button class="absolute left-2 top-2 text-xl heart-btn">💗</button> -->
+
+
+            
+ <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+
+
+
+
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+
+
+<!-- 
+                <div class="avatar placeholder">
+                  <div class="bg-fuchsia-100 text-fuchsia-700 rounded-full w-10">👩‍👧</div>
+                </div> -->
+
+
+
+
+                <div>
+                  <h3 class="card-title text-base font-bold">Women & Child Helpline</h3>
+                  <p class="text-xs opacity-70 -mt-0.5">Women & Child Helpline</p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3"><span class="number">109</span></p>
+              <div class="badge badge-ghost">Help</div>
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">📋 Copy</button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">📞 Call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="Anti-Corruption Helpline" data-number="106" data-category="Govt.">
+
+
+
+
+            <!-- <button class="absolute left-2 top-2 text-xl heart-btn">💗</button> -->
+
+
+            
+ <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+
+
+
+
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+
+
+<!-- 
+                <div class="avatar placeholder">
+                  <div class="bg-amber-100 text-amber-700 rounded-full w-10">⚖️</div>
+                </div> -->
+
+
+
+
+                <div>
+                  <h3 class="card-title text-base font-bold ">Anti-Corruption Helpline</h3>
+                  <p class="text-xs opacity-70 -mt-0.5">Anti-Corruption</p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3"><span class="number">106</span></p>
+              <div class="badge badge-ghost">Govt.</div>
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">📋 Copy</button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">📞 Call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="Electricity Helpline" data-number="16216" data-category="Electricity">
+
+
+
+            <!-- <button class="absolute left-2 top-2 text-xl heart-btn">💗</button> -->
+
+
+            
+ <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+
+
+
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+
+
+<!-- 
+                <div class="avatar placeholder">
+                  <div class="bg-yellow-100 text-yellow-700 rounded-full w-10">💡</div>
+                </div> -->
+
+
+
+                <div>
+                  <h3 class="card-title text-base font-bold">Electricity Helpline</h3>
+                  <p class="text-xs opacity-70 -mt-0.5">Electricity Outage</p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3"><span class="number">16216</span></p>
+              <div class="badge badge-ghost">Electricity</div>
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">📋 Copy</button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">📞 Call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="BRAC Helpline" data-number="16465" data-category="NGO">
+
+
+
+            <!-- <button class="absolute left-2 top-2 text-xl heart-btn">💗</button> -->
+
+
+            
+ <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+
+
+
+
+
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+
+
+<!-- 
+                <div class="avatar placeholder">
+                  <div class="bg-pink-100 text-pink-700 rounded-full w-10">🏥</div>
+                </div> -->
+
+
+
+
+
+                <div>
+                  <h3 class="card-title text-base font-bold">Brac Helpline</h3>
+                  <p class="text-xs opacity-70 -mt-0.5">Brac</p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3"><span class="number">16465</span></p>
+              <div class="badge badge-ghost">NGO</div>
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">📋 Copy</button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">📞 Call</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9 -->
+          <div class="card soft-card bg-base-100 hover:shadow-xl relative"
+               data-name="Bangladesh Railway Helpline" data-number="163" data-category="Travel">
+
+
+
+            <!-- <button class="absolute left-2 top-2 text-xl heart-btn">💗</button> -->
+
+            
+ <button class="absolute right-2 top-2 text-xl heart-btn text-gray-500 hover:text-red-500 " title="Add to favorites"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" 
+           stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" 
+              d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.74 0-3.265.988-4.062 2.431C11.953 4.738 10.428 3.75 
+                 8.688 3.75 6.099 3.75 4 5.765 4 8.25c0 7.22 8 11.25 8 11.25s8-4.03 
+                 8-11.25z" />
+      </svg></button>
+
+
+
+
+
+
+            <div class="card-body">
+              <div class="flex items-center gap-3">
+
+<!-- 
+                <div class="avatar placeholder">
+                  <div class="bg-teal-100 text-teal-700 rounded-full w-10">🚆</div>
+                </div>
+
+
+ -->
+
+
+                <div>
+                  <h3 class="card-title text-base font-bold">Bangladesh Railway Helpline</h3>
+                  <p class="text-xs opacity-70 -mt-0.5">Bangladesh Railway</p>
+                </div>
+              </div>
+
+              <p class="text-2xl font-bold mt-3"><span class="number">163</span></p>
+              <div class="badge badge-ghost">Travel</div>
+              <div class="card-actions mt-4 justify-between">
+                <button class="btn btn-sm btn-outline gap-2 btn-copy">📋 Copy</button>
+                <button class="btn btn-sm btn-success gap-2 btn-call">📞 Call</button>
+              </div>
+            </div>
+          </div>
+        </div>
+       </div>
+      </section>
+
+      <!-- ===== HISTORY (right) ===== -->
+      <aside class="bg-white rounded-2xl p-4 soft-card">
+        <div class="flex items-center justify-between mb-3">
+          <div class="flex items-center gap-auto">
+            <div class="rounded-xl  text-emerald-700 w-9 h-9 grid place-items-center">🕘</div>
+            <h3 class="font-bold text-lg">Call History</h3>
+          </div>
+          <button id="clearHistory" class="btn btn-sm btn-ghost bg-green-600 text-white font-medium px-5 py-1 rounded-full hover:bg-green-700 ">Clear</button>
+        </div>
+
+        <!-- list -->
+        <ul id="historyList" class="space-y-3 max-h-[540px] overflow-auto">
+          <!-- dynamically filled -->
+        </ul>
+
+        <p id="emptyHistoryNote" class="text-sm opacity-70 mt-3 text-center">
+          No calls yet.
+        </p>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ========== SCRIPTS ========== -->
+  <script>
+    // --- State ---
+    let hearts = 0;
+    let coins  = 100;    // default
+    let copies = 0;
+
+    // --- DOM refs ---
+    const heartCountEl = document.getElementById('heartCount');
+    const coinCountEl  = document.getElementById('coinCount');
+    const copyCountEl  = document.getElementById('copyCount');
+
+    const historyList  = document.getElementById('historyList');
+    const emptyNote    = document.getElementById('emptyHistoryNote');
+    const clearBtn     = document.getElementById('clearHistory');
+
+    // Utility: Local time string (date + time)
+    function nowStamp() {
+      const d = new Date();
+      const date = d.toLocaleDateString([], { year:'numeric', month:'short', day:'2-digit' });
+      const time = d.toLocaleTimeString([], { hour:'2-digit', minute:'2-digit', second:'2-digit' });
+      return `${time}`; // চাইলে `${date} • ${time}`
+    }
+
+    // Utility: Add to history UI
+    function addToHistory(name, number) {
+      // প্রথম কল এ "No calls yet." হাইড করা
+      emptyNote.classList.add('hidden');
+
+      const li = document.createElement('li');
+      li.className = "flex items-start justify-between gap-3 border rounded-xl p-3 hover:bg-base-50";
+
+      li.innerHTML = `
+        <div>
+          <p class="font-semibold leading-tight">${name}</p>
+          <p class="text-sm opacity-80 leading-tight">${number}</p>
+        </div>
+        <div class="text-xs opacity-70 whitespace-nowrap">${nowStamp()}</div>
+      `;
+
+      historyList.prepend(li);
+    }
+
+    // Utility: Clipboard copy with fallback
+    async function copyToClipboard(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch (err) {
+        // Fallback: execCommand
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        document.body.removeChild(ta);
+        return ok;
+      }
+    }
+
+    // --- Event: heart click (increment only) ---
+    document.querySelectorAll('.heart-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        hearts++;
+        heartCountEl.textContent = hearts;
+        btn.classList.add('heart-burst');
+        setTimeout(() => btn.classList.remove('heart-burst'), 180);
+      });
+    });
+
+    // --- Event: copy buttons ---
+    document.querySelectorAll('.btn-copy').forEach(btn => {
+      btn.addEventListener('click', async (ev) => {
+        const card = ev.currentTarget.closest('.card');
+        const number = card.dataset.number || card.querySelector('.number')?.textContent?.trim();
+
+        const ok = await copyToClipboard(number);
+        if (ok) {
+          copies++;
+          copyCountEl.textContent = copies;
+          alert(`✅ Copied: ${number}`);
+        } else {
+          alert('❌ Failed to copy. Try manually selecting the number.');
+        }
+      });
+    });
+
+    // --- Event: call buttons ---
+    document.querySelectorAll('.btn-call').forEach(btn => {
+      btn.addEventListener('click', (ev) => {
+        const card = ev.currentTarget.closest('.card');
+        const name = card.dataset.name || 'Service';
+        const number = card.dataset.number || card.querySelector('.number')?.textContent?.trim();
+
+        // coin check
+        if (coins < 20) {
+          alert('⛔ পর্যাপ্ত কয়েন নেই! (প্রতি কল = 20 কয়েন)');
+          return;
+        }
+
+        coins -= 20;
+        coinCountEl.textContent = coins;
+
+        alert(`📞 Calling ${name} — ${number}`);
+        addToHistory(name, number);
+      });
+    });
+
+    // --- Event: clear history ---
+    clearBtn.addEventListener('click', () => {
+      historyList.innerHTML = '';
+      emptyNote.classList.remove('hidden');
+    });
+  </script>
+</body>
+</html>
