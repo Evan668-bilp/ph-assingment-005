@@ -557,12 +557,12 @@
       const d = new Date();
       const date = d.toLocaleDateString([], { year:'numeric', month:'short', day:'2-digit' });
       const time = d.toLocaleTimeString([], { hour:'2-digit', minute:'2-digit', second:'2-digit' });
-      return `${time}`; // চাইলে `${date} • ${time}`
+      return `${time}`; 
     }
 
-    // Utility: Add to history UI
+    
     function addToHistory(name, number) {
-      // প্রথম কল এ "No calls yet." হাইড করা
+      
       emptyNote.classList.add('hidden');
 
       const li = document.createElement('li');
@@ -596,7 +596,7 @@
       }
     }
 
-    // --- Event: heart click (increment only) ---
+    // --- Event: heart click  ---
     document.querySelectorAll('.heart-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         hearts++;
@@ -632,7 +632,7 @@
 
         // coin check
         if (coins < 20) {
-          alert('⛔ পর্যাপ্ত কয়েন নেই! (প্রতি কল = 20 কয়েন)');
+          alert('⛔ Not Enough coins! (Per Call = 20 Coin)');
           return;
         }
 
